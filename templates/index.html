@@ -1,0 +1,97 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "style.css" %}">
+
+    <title>Menü</title>
+</head>
+<body>
+<div class="navbar col-12">
+    <a href="{% url "index" %}" class="title ms-4">Kopalum Cafe</a>
+    <div class="dropdown me-2 text-white">
+        <button class="btn  dropdown-toggle text-white" type="button"
+                id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                aria-expanded="false">
+            <img src="icons/turkey.png" width="25" alt="">
+            {% if lang == "en" %}
+            EN
+                {% else %}
+                TR
+            {% endif %}
+
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" style="min-width: 25px !important;">
+            <li><a class="dropdown-item" href="?lang=tr"><img
+                    src="{% static "icons/turkey.png" %}" width="25" alt="">TR</a></li>
+            <hr>
+            <li><a class="dropdown-item" href="?lang=en"><img
+                    src="{% static "icons/united-kingdom.png" %}" width="25" alt=""> EN</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="container mt-5" style="margin: auto">
+    <h4 class="text-muted mb-4">
+        {% if lang == "en" %}
+        <b>Welcome</b>
+            {% else %}
+            <b>Hoşgeldiniz</b>
+        {% endif %}
+    </h4>
+
+    {% for category in categories %}
+    {% if category.get_product_count %}
+    <div class="category-image mb-4" onclick="window.location.href='{% url "category" category.id %}'"
+         style='background-image: url({{ category.get_image }}); '>
+        <div class="overlay"></div>
+        <p class="title ">
+            {% if lang == "en" %}
+                {{ category.title_en }}
+                {% else %}
+                {{ category.title }}
+            {% endif %}
+        </p>
+    </div>
+    {% endif %}
+    {% endfor %}
+
+
+
+
+
+</div>
+
+
+
+
+<footer>
+    {% if lang == "en" %}
+        <p class="text-center"><small>Designed by Pencilpie.</small>
+    {% else %}
+            <p class="text-center"><small>Pencilpie tarafından tasarlandı.</small>
+
+    {% endif %}
+    </p>
+</footer>
+
+<script>
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+body{
+    font-family: Ubuntu;
+
+}
+
+.primary-bg{
+}
+
+.navbar .title{
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.navbar{
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background: #F7906C;
+    height: 57px;
+    margin: auto;
+
+}
+
+.category-image{
+    border-radius: 25px;
+    background:  lightgray 50% / cover no-repeat;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.25) inset;
+    width: 100%;
+    height: 120px;
+    padding: 45px 0;
+    position: relative;
+
+
+}
+
+.category-image .title{
+    color: #FFF;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Ubuntu, serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    z-index: 222;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+.category-image .overlay {
+    border-radius: 25px;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* black with 50% opacity */
+ }
+
+footer{
+    position: static;
+    bottom: 0;
+    width: 100%;
+
+}
+
+footer p{
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+
+
+}
+
+.item{
+    border-radius: 25px;
+    background: lightgray 50% / cover no-repeat;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    height: 155px;
+}
+
