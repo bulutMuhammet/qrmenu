@@ -16,7 +16,7 @@ class CategoryAdmin(SortableAdminMixin, admin.ModelAdmin):
 class ProductAdmin(SortableAdminMixin,admin.ModelAdmin):
     ordering = ['my_order']
 
-    list_display = ['category',"title","created_date", "my_order"]
+    list_display = ['title',"category","created_date", "my_order"]
     class Meta:
         model=Product
 
