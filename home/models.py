@@ -42,8 +42,8 @@ class Product(models.Model):
     title_en = models.CharField(max_length=60, blank=False, null=False, verbose_name="Ürün İsmi İngilizce")
     image = models.ImageField(verbose_name="Ürün Görseli", upload_to="categories/product", blank=False, null=False)
     price = models.FloatField(verbose_name="Ürün Fiyatı", blank=False, null=False, default=0.0)
-    detail = models.CharField(max_length=60, blank=False, null=False, verbose_name="Ürün Açıklaması / İçindekiler")
-    detail_en = models.CharField(max_length=60, blank=False, null=False, verbose_name="Ürün Açıklaması / İçindekiler  (İngilizce)")
+    detail = models.CharField(max_length=60, blank=True, null=True, verbose_name="Ürün Açıklaması / İçindekiler")
+    detail_en = models.CharField(max_length=60, blank=True, null=True, verbose_name="Ürün Açıklaması / İçindekiler  (İngilizce)")
     category = models.ForeignKey(Category, blank=False, null=False, verbose_name="Kategori", on_delete=models.CASCADE, related_name="products")
     created_date = models.DateTimeField(auto_now_add=True, verbose_name="Oluşturulma Tarihi")
 
